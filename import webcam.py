@@ -1,10 +1,13 @@
 
 
 import cv2
-vid = cv2.VideoCapture("vid1.mp4")
+webcam = cv2.VideoCapture(0)
+webcam.set (3, 640)
+webcam.set(4, 480)
+webcam.set(10, 100)
 
 while True:
-    success, img = vid.read()
-    cv2.imshow("Video", img)
+    success, img = webcam.read()
+    cv2.imshow("WebCAM", img)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
