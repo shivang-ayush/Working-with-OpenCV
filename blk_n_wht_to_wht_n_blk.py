@@ -1,4 +1,3 @@
-# ...existing code...
 import cv2
 
 img = cv2.imread("SA.png")
@@ -13,7 +12,7 @@ blur = cv2.GaussianBlur(gray, (5,5), 0)
 edges = cv2.Canny(blur, 50, 50)
 
 # invert: black edges on white background
-inverted = cv2.bitwise_not(edges)
+inverted = 255-edges
 # alternative: inverted = 255 - edges
 
 # optional: thicken edges (uncomment if you want thicker black borders)
@@ -27,4 +26,3 @@ cv2.imwrite("SA_canny_inverted.png", inverted)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-# ...existing code...
